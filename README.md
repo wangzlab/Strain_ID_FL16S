@@ -7,7 +7,7 @@ a simplified, automated pipeline for strain identification using Pacbio full-len
 
    cpanm Getopt::Long
    
-3. Download 16S_DB.fa, decompress the file, and index the BLASTN database:
+3. Download 16S_DB.fa, decompress the file, and index the BLASTn database:
 
    $ unzip 16S_DB.fa.zip
    
