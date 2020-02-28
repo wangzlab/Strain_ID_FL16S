@@ -18,17 +18,11 @@ an automated pipeline for strain identification using Pacbio full-length 16S dat
 5. Run the script:
    running "perl Strain_ID_FL16S.pl" should print the help message:
    
-   Description: Given the ASV abundance profile and sequences, this script will generate strain-level bins when possible.
-   Usage: Strain_ID_FL16S.pl <options>
-   Options:
-      -(Required) profile the ASV abundance profile from i.e. QIIME2/dada2
-      -(Required) seqs the ASV sequences in Fasta format
-      -(Optional) coef Pearson correlation coefficient (default 0.7)
-      -(Optional) threads number of threads for BLASTn (default 1)
-      -(Optional) deviation max deviations between ASV and genuine 16S ratio (default 0.3)
-   
-   Make sure blastn and Rscript is in your system path.
-   Contact:     Zhang Wang (wangz@m.scnu.edu.cn)
+  (Required) -profile the ASV abundance profile from i.e. QIIME2/dada2
+  (Required) -seqs the ASV sequences in Fasta format
+  (Optional) -coef Pearson correlation coefficient (default 0.7)
+  (Optional) -threads number of threads for BLASTn (default 1)
+  (Optional) -deviation max deviations between ASV and genuine 16S ratio (default 0.3)
 
    perl Strain_ID_FL16S.pl -profile profile.txt -seqs seqs.fa > output.txt
    
