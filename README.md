@@ -30,7 +30,7 @@ A simplified, automated pipeline for strain identification using Pacbio full-len
 
    $ perl Strain_ID_FL16S.pl -profile profile.txt -seqs seqs.fa > output.txt
 
-7. Optional parameters can be set include: (1) -threads: number of threads for BLASTn search (default 1), (2) -coef: Pearson correlation coefficient cutoff (default 0.7), (3) -deviation: allowed deviations between observed and genuine 16S copy number ratios (default 0.3).
+7. Optional parameters include: (1) -threads: number of threads for BLASTn search (default 1), (2) -coef: Pearson correlation coefficient cutoff (default 0.7), (3) -deviation: allowed deviations between observed and genuine 16S copy number ratios (default 0.3).
 
 8. The output.txt file is a table in which each line represents a pair of ASVs with 1) identical match to the 16S alleles of same bacterial genome, 2) showed correlation patterns across all samples and 3) in integral copy number ratio with the intragenomic 16S copy number ratio for the bacterial genome (±0.3).
 
