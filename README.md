@@ -4,8 +4,9 @@ an automated pipeline for strain identification using Pacbio full-length 16S dat
 1. Ensure blastn and Rscript is in your system path.
 2. Download 16S_DB.fa, decompress the file, and index the BLASTN database:
 
-   unzip 16S_DB.fa.zip
-   makeblastdb -dbtype nucl -in 16S_DB.fa
+   $ unzip 16S_DB.fa.zip
+   
+   $ makeblastdb -dbtype nucl -in 16S_DB.fa
    
    The 16S_DB.fa contains unique 16S sequences from all 14,062 complete bacterial genomes in Genbank (accessed May 9, 2019)
    
@@ -19,7 +20,7 @@ an automated pipeline for strain identification using Pacbio full-length 16S dat
 5. Run the script:
    running "perl Strain_ID_FL16S.pl" should print the help message.
 
-   perl Strain_ID_FL16S.pl -profile profile.txt -seqs seqs.fa > output.txt
+   $ perl Strain_ID_FL16S.pl -profile profile.txt -seqs seqs.fa > output.txt
 
 6. Optional parameters can be set include: (1) -threads: number of threads for BLASTn search (default 1), (2) -coef: Pearson correlation coefficient cutoff (default 0.7), (3) -deviation: allowed deviations between observed and genuine 16S copy number ratios (default 0.3)
 
