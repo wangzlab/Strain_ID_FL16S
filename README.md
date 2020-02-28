@@ -25,8 +25,8 @@
                 -(Optional) threads number of threads for BLASTn (default 1)
                 -(Optional) deviation max deviations between ASV and genuine 16S ratio (default 0.3)
    
-        Make sure blastn and Rscript is in your system path
-        Contact:     Zhang Wang (wangz@m.scnu.edu.cn)
+   Make sure blastn and Rscript is in your system path
+   Contact:     Zhang Wang (wangz@m.scnu.edu.cn)
 
    perl Strain_ID_FL16S.pl -profile profile.txt -seqs seqs.fa > output.txt
    
