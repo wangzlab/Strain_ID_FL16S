@@ -1,5 +1,5 @@
 # Strain_ID_FL16S
-an automated pipeline for strain identification using Pacbio full-length 16S data.
+a simplified, automated pipeline for strain identification using Pacbio full-length 16S data.
 
 1. Ensure blastn and Rscript is in your system path.
 
