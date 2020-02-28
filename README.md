@@ -16,17 +16,13 @@ an automated pipeline for strain identification using Pacbio full-length 16S dat
    seqs.fa which contains the full-length 16S sequences for each ASV
    
 5. Run the script:
-   running "perl Strain_ID_FL16S.pl" should print the help message:
-   
-  (Required) -profile the ASV abundance profile from i.e. QIIME2/dada2
-  (Required) -seqs the ASV sequences in Fasta format
-  (Optional) -coef Pearson correlation coefficient (default 0.7)
-  (Optional) -threads number of threads for BLASTn (default 1)
-  (Optional) -deviation max deviations between ASV and genuine 16S ratio (default 0.3)
+   running "perl Strain_ID_FL16S.pl" should print the help message.
 
    perl Strain_ID_FL16S.pl -profile profile.txt -seqs seqs.fa > output.txt
-   
- 6. The output file is a table in which each line represent a pair of ASVs with 1) identical match to the same bacterial genome, 2) showed correlation patterns across all samples (Pearson's R>0.7) and 3) in integral copy number ratio with the intragenomic 16S copy number ratio for the bacterial genome (±0.3).
+
+6. Optional parameters can be set include: (1) -threads: number of threads for BLASTn search (default 1), (2) -coef: Pearson correlation coefficient cutoff (default 0.7), (3) -deviation: allowed deviations between observed and genuine 16S copy number ratios (default 0.3)
+
+7. The output file is a table in which each line represent a pair of ASVs with 1) identical match to the same bacterial genome, 2) showed correlation patterns across all samples and 3) in integral copy number ratio with the intragenomic 16S copy number ratio for the bacterial genome.
  
  
    
