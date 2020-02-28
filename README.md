@@ -5,7 +5,7 @@ A simplified, automated pipeline for strain identification using Pacbio full-len
 
 2. Make sure perl module Getopt::Long is install.
 
-   cpanm Getopt::Long
+   $ cpanm Getopt::Long
    
 3. Download 16S_DB.fa, decompress the file, and index the BLASTn database:
 
