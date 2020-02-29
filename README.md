@@ -35,7 +35,8 @@ A simplified, automated pipeline for strain identification using Pacbio full-len
 8. The output.txt file is a table in which each line represents a pair of ASVs with 1) identical match to the 16S alleles of same bacterial genome, 2) showed correlation patterns across all samples and 3) in integral copy number ratio with the intragenomic 16S copy number ratio for the bacterial genome (±0.3).
 
 9. Note: If there are more than one pair of ASVs corresponding to the same genome (meaning there are more than two ASVs recovered from the genome), one can manually aggregate them into a single copy number ratio (i.e. SSU1:SSU2=2:1, SSU4:SSU1=3:1 => SSU4:SSU1:SSU2=6:2:1) and report the results.
- 
+
+10. The genomic abundances of each strain in each sample can be calculated as the average abundances of ASVs normalized by their copy numbers in the genome.
    
 
 
