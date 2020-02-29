@@ -9,7 +9,7 @@ A simplified, automated pipeline for strain identification using Pacbio full-len
    
 3. Download 16S_DB.fa, decompress the file, and index the BLASTn database:
 
-   $ unzip 16S_DB.fa.zip
+   $ tar -zxvf 16S_DB.tar.gz
    
    $ makeblastdb -dbtype nucl -in 16S_DB.fa
    
