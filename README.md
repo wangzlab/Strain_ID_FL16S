@@ -1,7 +1,5 @@
 # Strain_ID_FL16S
-Strain_ID_FL16S is a simplified, automated pipeline for strain identification using Pacbio full-length 16S data. The script generates strain-level (or genome-level) amplicon sequence variant (ASV) bins by leveraging intra-genomic variations of 16S rRNA gene for bacterial genomes.
-
-![The pipeline](C:\Users\Wang Zhang\Downloads\pipeline.png)
+Strain_ID_FL16S is a simplified, automated pipeline for strain identification using Pacbio full-length 16S data. The script generates strain-level (or genome-level) amplicon sequence variant (ASV) bins by leveraging intra-genomic variations of 16S rRNA gene for bacterial genomes. For this purpose, the 16S sequences and their copy number ratios for 14,062 complete bacterial genomes were curated.
 
 The detailed usage for the script is as follows:
 
