@@ -23,7 +23,7 @@ A simplified, automated pipeline for strain identification using Pacbio full-len
 
    profile.txt contains the abundances (absolute count) for each ASV in each sample, obtained from QIIME2/dada2 (with or without header info #Constructed from biom file, with or without taxonomy in the last column).
 
-   seqs.fa contains the full-length 16S sequences for each ASV.
+   seqs.fa contains the full-length 16S sequences for each ASV in FASTA format.
    
 6. Run the script:
    running "perl Strain_ID_FL16S.pl" should print the help message.
