@@ -17,7 +17,7 @@ A simplified, automated pipeline for strain identification using Pacbio full-len
    
 4. Download the 16S_ratio.txt and Strain_ID_FL16S.pl files and place them in the same directory.
    
-   The 16S_ratio.txt contains the intragenomic 16S copy number ratio for each complete bacterial genomes with SSU IDs matching the 16S_DB.fa
+   The 16S_ratio.txt contains the intragenomic 16S copy number ratio for each complete bacterial genomes with SSU IDs matching the 16S_DB.fa, along with species and strain-level taxonomy of each genome.
    
 5. Format input files (example files provided): 
 
