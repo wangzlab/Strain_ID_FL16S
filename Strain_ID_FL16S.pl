@@ -143,5 +143,5 @@ for my $key (keys %genome) {
 		}
 	}
 }
-#system ("rm tmp*");
+system ("rm tmp*");
 print STDERR "Step 6: Done\n";
