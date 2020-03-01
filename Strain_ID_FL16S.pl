@@ -30,7 +30,7 @@ GetOptions(     'profile=s'=>\$profile,
 $profile || die $usage;
 $seqs || die $usage;
 
-my (%hash, %nonsingle, %organism, %species, %strain, %copy, %genome, %revgenome)=();
+my (%abundance, %nonsingle, %organism, %species, %strain, %copy, %genome, %revgenome)=();
 print STDERR "Step 1: read in ASV abundance table\n";
 open (IN, $profile);
 my $header=<IN>;
@@ -47,7 +47,7 @@ while (<IN>) {
 	}
 	my $count=0;
 	for my $i (1..$#a) {
-		$hash{$headers[$i]}{$a[0]}=$a[$i];
+		$abundance{$headers[$i]}{$a[0]}=$a[$i];
 		if ($a[$i]>0) {
 			$count ++;
 		}
@@ -92,7 +92,7 @@ while (<IN>) {
 	$genome{$gn}{$a[0]}=$variant;
 	$revgenome{$a[0]}{$gn}=$variant;
 }
-open (OUT1, ">tmp.R"); # print R code for cor.test
+open (OUT1, ">tmp.R"); # print temporary R code for cor.test
 print OUT1 "data<-read.table(\"tmp\",row.names=1)\n";
 print OUT1 "out<-data.frame(coef=1,slope=1)\n";
 print OUT1 "out[1,1]<-unname(cor.test(data\$V2,data\$V3)\$estimate)\n";
@@ -108,8 +108,8 @@ for my $key (keys %genome) {
 			for my $key3 (keys %{$genome{$key}}) {
 				next if (exists $select{$key3}{$key2} or $key2 eq $key3);
 				open (OUT, ">tmp"); # output abundance to temp file for cor test #
-				for my $key4 (keys %hash) {
-					print OUT $key4."\t".$hash{$key4}{$key2}."\t".$hash{$key4}{$key3}."\n";
+				for my $key4 (keys %abundance) {
+					print OUT $key4."\t".$abundance{$key4}{$key2}."\t".$abundance{$key4}{$key3}."\n";
 				}
 				$select{$key2}{$key3}=1;
 				system("Rscript tmp.R > tmp.result"); # correlation test
