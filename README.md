@@ -15,7 +15,7 @@ The detailed usage for the script is as follows:
    
    $ makeblastdb -dbtype nucl -in 16S_DB.fa
    
-   The 16S_DB.fa contains unique 16S sequences from all 14,062 complete bacterial genomes in Genbank (accessed May 9, 2019).
+   The 16S_DB.fa contains unique 16S sequences from all 14,062 complete bacterial genomes in Genbank (accessed May 9, 2019) and will be updated periodically.
    
 4. Download the 16S_ratio.txt and Strain_ID_FL16S.pl files and place them in the same directory.
    
