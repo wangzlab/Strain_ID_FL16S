@@ -80,10 +80,10 @@ while (<IN>) {
 	$strain{$a[0]}=$a[5];
 }
 print STDERR "Step 3: Perform BLASTn against database\n";
-system ("/software/ncbi-blast-2.8.1+/bin/blastn -query $seqs -db 16S_DB.fa -outfmt 6 -out tmp.btab -perc_identity 100 -qcov_hsp_perc 100 -num_threads $threads");
+system ("/software/ncbi-blast-2.8.1+/bin/blastn -query $seqs -db 16S_DB.fa -outfmt 6 -out $$.btab -perc_identity 100 -qcov_hsp_perc 100 -num_threads $threads");
 
 print STDERR "Step 4: Obtain initial taxonomic bins\n";
-open (IN, "tmp.btab");
+open (IN, "$$.btab");
 while (<IN>) {
 	chop;
 	my @a=split("\t",$_);
@@ -92,8 +92,8 @@ while (<IN>) {
 	$genome{$gn}{$a[0]}=$variant;
 	$revgenome{$a[0]}{$gn}=$variant;
 }
-open (OUT1, ">tmp.R"); # print temporary R code for cor.test
-print OUT1 "data<-read.table(\"tmp\",row.names=1)\n";
+open (OUT1, ">$$.R"); # print temporary R code for cor.test
+print OUT1 "data<-read.table(\"$$.txt\",row.names=1)\n";
 print OUT1 "out<-data.frame(coef=1,slope=1)\n";
 print OUT1 "out[1,1]<-unname(cor.test(data\$V2,data\$V3)\$estimate)\n";
 print OUT1 "out[1,2]<-lm(data\$V2~data\$V3)\$coefficient[\"data\$V3\"]\n";
@@ -107,13 +107,13 @@ for my $key (keys %genome) {
 		for my $key2 (keys %{$genome{$key}}) {
 			for my $key3 (keys %{$genome{$key}}) {
 				next if (exists $select{$key3}{$key2} or $key2 eq $key3);
-				open (OUT, ">tmp"); # output abundance to temp file for cor test #
+				open (OUT, ">$$.txt"); # output abundance to temp file for cor test #
 				for my $key4 (keys %abundance) {
 					print OUT $key4."\t".$abundance{$key4}{$key2}."\t".$abundance{$key4}{$key3}."\n";
 				}
 				$select{$key2}{$key3}=1;
-				system("Rscript tmp.R > tmp.result"); # correlation test
-				open (IN, "tmp.result");
+				system("Rscript $$.R > $$.result"); # correlation test
+				open (IN, "$$.result");
 				my $dump=<IN>;
 				my $data=<IN>;
 				my @data=split(" ",$data);
@@ -143,5 +143,5 @@ for my $key (keys %genome) {
 		}
 	}
 }
-system ("rm tmp*");
+system ("rm $$.*");
 print STDERR "Step 6: Done\n";
