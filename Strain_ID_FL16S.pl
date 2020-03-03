@@ -138,7 +138,7 @@ for my $key (keys %genome) {
 	}
 	else { # also print if perfect match between single ASV and genome with only one copy of 16S
 		my @asv=keys %{$genome{$key}};
-		if (scalar keys %{$copy{$key}} == 1 and scalar keys %{$revgenome{$asv[0]}}==1) { ## remove spurious cases with multiple identical strain-level hits
+		if (scalar keys %{$copy{$key}} == 1 and scalar keys %{$revgenome{$asv[0]}}==1) { ## exclude spurious cases with multiple identical strain-level hits
 			print $key."\t".$species{$key}."\t".$strain{$key}."\t".$asv[0]."\t".$asv[0]."\t1\t".$genome{$key}{$asv[0]}."\t".$genome{$key}{$asv[0]}."\t".$copy{$key}{$genome{$key}{$asv[0]}}."\n";
 		}
 	}
