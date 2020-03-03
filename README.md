@@ -3,9 +3,9 @@ Strain_ID_FL16S is a simplified, automated pipeline for strain identification us
 
 The detailed usage for the script is as follows:
 
-1. Ensure blastn and Rscript is in your system path.
+1. Ensure blastn (NCBI-blast) and Rscript is in your system path.
 
-2. Make sure perl module Getopt::Long is install.
+2. Make sure perl module Getopt::Long is installed.
 
    $ cpanm Getopt::Long
    
