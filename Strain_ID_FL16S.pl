@@ -7,11 +7,11 @@ Description: Given the ASV abundance profile and sequences, this
         script will generate strain-level bins when possible.
 Usage: $0 <options>
         Options:
-                -(Required) profile the ASV abundance profile from i.e. QIIME2/dada2
-                -(Required) seqs the ASV sequences in Fasta format
-                -(Optional) coef Pearson correlation coefficient (default 0.7)
-		-(Optional) threads number of threads for BLASTn (default 1)
-		-(Optional) deviation max deviations between ASV and genuine 16S ratio (default 0.3)
+                -profile the ASV abundance profile from i.e. QIIME2/dada2 (Required)
+                -seqs the ASV sequences in Fasta format (Required)
+                -coef Pearson correlation coefficient (Optional, default 0.7)
+		-threads number of threads for BLASTn (Optional, default 1)
+		-deviation max deviations between ASV and genuine 16S ratio (Optional, default 0.3)
 
 	Make sure blastn and Rscript is in your system path
 	Contact:     Zhang Wang (wangz\@m.scnu.edu.cn)
