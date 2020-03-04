@@ -1,5 +1,5 @@
 # Strain_ID_FL16S
-Strain_ID_FL16S is a simplified, automated pipeline for strain identification using Pacbio full-length 16S data. The pipeline extends the idea of Callahan et al. Nucleic Acid Research, 2019 (doi: 10.1093/nar/gkz569) to generate strain-level amplicon sequence variant (ASV) bins leveraging bacterial intra-genomic 16S copy number variations. For this purpose, the 16S sequences and their copy number ratios for 14,062 complete bacterial genomes were curated.
+Strain_ID_FL16S is a simple tool that automates bacterial strain identification using Pacbio full-length 16S amplicon sequencing data. The pipeline extends the idea of Callahan et al. Nucleic Acid Research, 2019 (doi: 10.1093/nar/gkz569) to generate strain-level amplicon sequence variant (ASV) bins leveraging bacterial intra-genomic 16S copy number variations. For this purpose, the 16S sequences and their copy number ratios for 14,062 complete bacterial genomes were curated.
 
 The detailed usage for the script is as follows:
 
